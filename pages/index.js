@@ -29,7 +29,6 @@ const Home = ({ trendingResults, followResults, providers }) => {
 
         {/* Feed */}
         <Feed />
-        {console.log(session)}
 
         {/* Modal */}
         {isOpen && <Modal />}
