@@ -3,6 +3,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { getProviders, getSession, useSession } from 'next-auth/react'
 
+import trendingResults from '../assets/trending'
+import followResults from '../assets/trending'
+
 import Sidebar from '../components/Sidebar'
 import Feed from '../components/Feed'
 import Modal from '../components/Modal'
@@ -44,12 +47,12 @@ const Home = ({ trendingResults, followResults, providers }) => {
 }
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch('https://jsonkeeper.com/b/NKEV').then(
-    (res) => res.json()
-  )
-  const followResults = await fetch('https://jsonkeeper.com/b/WWMJ').then(
-    (res) => res.json()
-  )
+  // const trendingResults = await fetch('https://jsonkeeper.com/b/NKEV').then(
+  //   (res) => res.json()
+  // )
+  // const followResults = await fetch('https://jsonkeeper.com/b/WWMJ').then(
+  //   (res) => res.json()
+  // )
   const providers = await getProviders()
   const session = await getSession(context)
 
