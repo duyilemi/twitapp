@@ -20,6 +20,9 @@ import { ArrowLeftIcon } from '@heroicons/react/solid'
 import Comment from '../components/Comment'
 import Head from 'next/head'
 
+import trendingResults from '../assets/trending'
+import followResults from '../assets/trending'
+
 function PostPage({ trendingResults, followResults, providers }) {
   const { data: session } = useSession()
   const [isOpen, setIsOpen] = useRecoilState(modalState)
@@ -98,12 +101,12 @@ function PostPage({ trendingResults, followResults, providers }) {
 export default PostPage
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch('https://jsonkeeper.com/b/NKEV').then(
-    (res) => res.json()
-  )
-  const followResults = await fetch('https://jsonkeeper.com/b/WWMJ').then(
-    (res) => res.json()
-  )
+  // const trendingResults = await fetch('https://jsonkeeper.com/b/NKEV').then(
+  //   (res) => res.json()
+  // )
+  // const followResults = await fetch('https://jsonkeeper.com/b/WWMJ').then(
+  //   (res) => res.json()
+  // )
   const providers = await getProviders()
   const session = await getSession(context)
 
